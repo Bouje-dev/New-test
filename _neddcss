@@ -1,0 +1,407 @@
+ {% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="flowscontent">
+    <div class="claok_ana">
+ 
+
+ 
+        <div class="  w88">
+            <div class="section-block" id="basicform" style="color: whitesmoke;">
+                <h3 class="section-title">
+                    <div id="content">
+                    To Here
+                </div>
+            </h3>
+                <p>Use custom button styles for actions in forms, dialogs, and more with support for
+                    multiple sizes, states, and more.</p>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Add New Cloacking</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn1 btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+
+                        </button>
+                        <button type="button" class="btn1 btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+
+                    <div class="steps _w910">
+                        <div class="row align-items-center">
+                            <div class="col-6 col-md-4 steps__item current">
+                                <div class="steps__number">1</div>
+                                <div class="steps__desc">Add links</div>
+                            </div>
+                            <div class="col-6 col-md-4 steps__item js-redirect-step"
+                                >
+                                <div class="steps__number">2</div>
+                                <div class="steps__desc">Filter settings</div>
+                            </div>
+                            <div class="col-6 col-md-4 steps__item js-redirect-step"
+                                >
+                                <div class="steps__number">3</div>
+                                <div class="steps__desc">Flow status settings</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- form  -->
+<!-- action="{% url 'getdata' %}" -->
+<!-- method="POST"  -->
+
+
+
+
+
+
+
+
+
+
+
+<form id="myForm" method="POST">
+    {% csrf_token %}
+
+                         <div class="form-section actives">
+                            <div class="form-group">
+
+                                <label for="inputproduct_n"  class="col-form-label">Product Name</label>
+                                <input id="inputproduct_n" type="text" name="Product_name" class="form-control">
+                                {% if errors.product_name %}
+                                <span class="error">{{ errors.product_name }}</span>
+                            {% endif %}
+                        
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">White Page</label>
+                                <input id="inputurl1" name="WhitePage" name="WhitePage" type="url" placeholder="bot_page.com"
+                                    class="form-control">
+                                     
+                                    {% if errors.white_page %}
+                                    <span class="error">{{ errors.white_page }}</span>
+                                {% endif %}
+                                <p>white page - this is the page where <strong> bots</strong> and <strong>moderators</strong> land.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail">Offer page</label>
+                                <input id="inputurl2" type="url" name="Offer_page" placeholder="Offer_page.com"
+                                    class="form-control">
+                                    {% if errors.offer_page %}
+                                <span class="error">{{ errors.offer_page }}</span>
+                            {% endif %}
+                                <p>Offer Page - this is the page where <strong>customers</strong> land,.</p>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-item__field">
+                                    <div class="dropdown bootstrap-select show-tick w100"
+                                        style="width: 100%;">
+                                        <label for="inputEmail">Select Country</label>
+
+
+                                        <label class="checkbox-on-off">
+                                            <input type="checkbox" checked="checked"
+                                                name="mode_list_country">
+                                            <span class="checkbox-on-off__text _on">مسموح</span>
+                                            <span class="checkbox-on-off__text _off">محظور</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-item__field">
+
+                                        <select class="selectpicker w100" name="filter_countries[]"
+                                            multiple="multiple" data-selected-text-format="count"
+                                            data-live-search="true" data-actions-box="true" tabindex="-98"
+                                            id="country-select">
+                                        </select>
+                                        {% if errors.scountry %}
+                                <span class="error">{{ errors.scountry }}</span>
+                            {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                          
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- Section 2 -->
+                <div class="form-section Section_2" style="    padding-left: 23px;
+                width: 92%;
+            ">
+                    <div class="col-12">
+                        <div class="form-item">
+                            <div class="form-item__field">
+                                <label class="checkbox-switch">
+                                    <input type="checkbox" checked="checked" name="filter_CLock_flag">
+                                   
+                                    <span class="checkbox-switch__visible"></span>
+                                    <span class="checkbox-switch__text">Cloaking</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-item">
+                            <div class="form-item__field">
+                                <label class="checkbox-switch">
+                                    <input type="checkbox" checked="checked" name="filter_VpnP_flag">
+                                    <span class="checkbox-switch__visible"></span>
+                                    <span class="checkbox-switch__text">حظر الانتقالات من VPN/Proxy</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-item">
+                            <div class="form-item__field">
+                                <label class="checkbox-switch">
+                                    <input type="checkbox" checked="checked" name="filter_isp_IPv6_flag">
+                                    <span class="checkbox-switch__visible"></span>
+                                    <span class="checkbox-switch__text">حظر الانتقالات من IPv6</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-item">
+                            <div class="form-item__field">
+                                <label class="checkbox-switch">
+                                    <input type="checkbox" checked="checked" name="filter_isp_flag">
+                                    <span class="checkbox-switch__visible"></span>
+                                    <span class="checkbox-switch__text">حظر الانتقالات بدون ISP</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-item__field">
+                            <div class="dropdown bootstrap-select show-tick w100" style="width: 100%;">
+                                <label for="inputEmail"> Devices </label>
+
+
+                                <label class="checkbox-on-off">
+                                    <input type="checkbox" checked="checked" name="mode_list_country">
+                                    <span class="checkbox-on-off__text _on">Allowed</span>
+                                    <span class="checkbox-on-off__text _off">Blocked</span>
+                                </label>
+                            </div>
+                            <div class="form-item__field">
+
+                                <select class="selectpicker w100" name="fillter_Devices[]"
+                                    multiple="multiple" data-selected-text-format="count"
+                                    data-live-search="true" data-actions-box="true" tabindex="-98"
+                                    id="Devices-select">
+                                </select>
+                                {% if errors.sdevices %}
+                                <span class="error">{{ errors.sdevices }}</span>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item__field">
+                            <div class="dropdown bootstrap-select show-tick w100" style="width: 100%;">
+                                <label for="inputEmail">Operating systems</label>
+
+
+                                <label class="checkbox-on-off">
+                                    <input type="checkbox" checked="checked" name="mode_list_country[]">
+                                    <span class="checkbox-on-off__text _on">Allowed</span>
+                                    <span class="checkbox-on-off__text _off">Blocked</span>
+                                </label>
+                            </div>
+                            <div class="form-item__field">
+
+                                <select class="selectpicker w100" name="filter_systems[]"
+                                    multiple="multiple" data-selected-text-format="count"
+                                    data-live-search="true" data-actions-box="true" tabindex="-98"
+                                    id="systems-select">
+                                </select>
+                                {% if errors.soperators %}
+                                <span class="error">{{ errors.soperators }}</span>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item__field">
+                            <div class="dropdown bootstrap-select show-tick w100" style="width: 100%;">
+                                <label for="inputEmail">Browsers</label>
+
+
+                                <label class="checkbox-on-off">
+                                    <input type="checkbox" checked="checked" name="mode_list_country">
+                                    <span class="checkbox-on-off__text _on">Allowed</span>
+                                    <span class="checkbox-on-off__text _off">Blocked</span>
+                                </label>
+                            </div>
+                            <div class="form-item__field">
+
+                                <select class="selectpicker w100" name="filter_browsers[]"
+                                    multiple="multiple" data-selected-text-format="count"
+                                    data-live-search="true" data-actions-box="true" tabindex="-98"
+                                    id="browsers-select">
+                                </select>
+                                {% if errors.sbrowser %}
+                                <span class="error">{{ errors.sbrowser }}</span>
+                            {% endif %}
+                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-item__field">
+                            <div class="dropdown bootstrap-select show-tick w100" style="width: 100%;">
+                                <label for="inputEmail">Languages</label>
+
+
+                                <label class="checkbox-on-off">
+                                    <input type="checkbox" checked="checked" name="mode_list_country">
+                                    <span class="checkbox-on-off__text _on">Allowed</span>
+                                    <span class="checkbox-on-off__text _off">Blocked</span>
+                                </label>
+                            </div>
+                            <div class="form-item__field">
+
+                                <select class="selectpicker w100" name="filter_languages[]"
+                                    multiple="multiple" data-selected-text-format="count"
+                                    data-live-search="true" data-actions-box="true" tabindex="-98"
+                                    id="languages-select">
+                                </select>
+                                {% if errors.slanguages %}
+<span class="error">{{ errors.slanguages }}</span>
+{% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+
+            
+
+
+                </div>
+<!-- last sections  -->
+
+
+
+
+
+
+
+
+
+<div class="form-section Section_3"> 
+
+
+                     <h2>Confirmation</h2>
+                    <p style="color: red; font-weight: bold;">Please review your information before submitting.</p>
+                    <div class="button-group">
+                         <!-- <button id="form_submit" class="btn" type="submit">Submit <i class="ti-arrow-right"></i></button> -->
+                        <button type="submit">Submit</button>
+
+
+                    </div>
+                </div>
+
+                <div id="responseMessage" style="color: green;"></div>
+        <!-- {{flow_id}} -->
+             <div style="color: red;">
+                          {{flow_id}}
+   
+             </div>
+
+
+
+
+
+
+
+
+                </form>
+
+
+
+
+
+
+           
+
+        </div>
+    </div>
+
+    <!-- clocking info end here -->
+    <!-- Details start here -->
+
+
+
+
+
+</div>
+
+ 
+ 
+
+ </div>
+ 
+
+</div>
+
+<style>
+    #myForm{
+       
+        width: 100%;
+    display: block;
+    display: flex
+;
+    align-items: flex-start;
+    align-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+
+    }
+    .form-section{
+        width: 120%;
+    }
+</style>
+{% endblock %}
